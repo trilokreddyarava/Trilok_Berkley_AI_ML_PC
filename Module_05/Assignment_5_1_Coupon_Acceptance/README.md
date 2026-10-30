@@ -7,7 +7,7 @@
 
 > **Main takeaway:** Coupon acceptance is not uniform across customers or offers. Prior visits to the relevant venue are strongly associated with stated coupon acceptance. In the survey, 56.84% of all scenarios indicated acceptance, but the rates differed markedly for bar and Coffee House coupons and for different visit-frequency segments.
 
-**Start here:** [📓 View the executed Jupyter Notebook](notebooks/coupon_acceptance_analysis.ipynb) · [📁 Dataset](data/coupons.csv) · [📊 Visualizations](outputs/) · [⚙️ Dependencies](requirements.txt)
+**Start here:** [📓 View the executed Jupyter Notebook](notebooks/coupon_acceptance_analysis.ipynb) · [📸 Execution screenshot](Execution_Screenshots/jupyter_notebook_execution.png) · [📁 Dataset](data/coupons.csv) · [📊 Visualizations](outputs/) · [⚙️ Dependencies](requirements.txt)
 
 ---
 
@@ -18,38 +18,6 @@ This project examines **12,684 hypothetical driving scenarios** to understand th
 The overall stated acceptance rate was **56.84% (7,210 of 12,684)**. The investigation first follows the course's required **bar-coupon questions** and then conducts an **independent Coffee House coupon analysis**. The strongest descriptive pattern across both groups is prior venue visitation: respondents who report visiting the corresponding venue more frequently tend to report greater willingness to accept that coupon.
 
 This is a **descriptive, observational analysis**. It identifies potential marketing segments and testable hypotheses; it does **not** demonstrate causal effects or measure actual coupon redemption, purchases, or campaign profitability.
-
-Project Structure:
-Trilok_Berkley_AI_ML_PC/
-│
-└── Module_05/
-    │
-    ├── README.md                              # Module 5 overview
-    │
-    └── Assignment_5_1_Coupon_Acceptance/
-        │
-        ├── README.md                          # Project overview, findings, and recommendations
-        ├── requirements.txt                   # Python dependencies
-        ├── .gitignore                         # Git exclusions
-        │
-        ├── data/
-        │   └── coupons.csv                    # Original dataset
-        │
-        ├── notebooks/
-        │   └── coupon_acceptance_analysis.ipynb  # Executed Jupyter notebook (43 cells)
-        │
-        ├── outputs/                           # Generated visualizations
-        │   ├── coupon_type_counts.png
-        │   ├── temperature_distribution.png
-        │   ├── bar_segment_acceptance.png
-        │   ├── coffee_visit_frequency.png
-        │   ├── coffee_time_of_day.png
-        │   ├── coffee_driving_context.png
-        │   └── coffee_accepted_vs_rejected.png
-        │
-        └── screenshots/                       # Jupyter execution screenshots
-            └── jupyter_notebook_execution.png
-
 
 ### Results at a glance
 
@@ -110,7 +78,7 @@ Businesses use coupons to attract customers, increase store visits, and encourag
 | [12. Statistical Interpretation and Limitations](#12-statistical-interpretation-and-limitations) | Statistical limitations |
 | [13. Next Steps](#13-next-steps) | Further analysis and experiments |
 | [14. Visualizations Gallery](#14-visualizations-gallery) | All seven charts |
-| [15. Repository Structure](#15-repository-structure) | File structure |
+| [15. Repository Structure](#15-repository-structure) | Full repository tree and execution screenshot |
 | [16. How to Run the Notebook](#16-how-to-run-the-notebook) | How to run the notebook |
 | [17. Assignment Rubric Alignment (20 Points)](#17-assignment-rubric-alignment-20-points) | Rubric checklist |
 | [18. References and Attribution](#18-references-and-attribution) | References |
@@ -575,30 +543,52 @@ For calculation details and explanatory comments, see the **[Jupyter Notebook](n
 
 ## 15. Repository Structure
 
-This project is designed to live inside the user's main Berkeley coursework repository:
+The project is organized under **[Trilok_Berkley_AI_ML_PC](https://github.com/trilokreddyarava/Trilok_Berkley_AI_ML_PC) → [Module_05](https://github.com/trilokreddyarava/Trilok_Berkley_AI_ML_PC/tree/main/Module_05) → [Assignment_5_1_Coupon_Acceptance](https://github.com/trilokreddyarava/Trilok_Berkley_AI_ML_PC/tree/main/Module_05/Assignment_5_1_Coupon_Acceptance)**.
 
 ```text
 Trilok_Berkley_AI_ML_PC/
+│
 └── Module_05/
+    │
+    ├── README.md                                  # Module 5 overview
+    │
     └── Assignment_5_1_Coupon_Acceptance/
-        ├── README.md
-        ├── requirements.txt
-        ├── .gitignore
+        │
+        ├── README.md                              # Project overview, findings, recommendations
+        ├── requirements.txt                       # Python dependencies
+        ├── .gitignore                             # Git exclusions (if present)
+        │
         ├── data/
-        │   └── coupons.csv
+        │   └── coupons.csv                        # Original dataset
+        │
         ├── notebooks/
-        │   └── coupon_acceptance_analysis.ipynb
-        └── outputs/
-            ├── coupon_type_counts.png
-            ├── temperature_distribution.png
-            ├── bar_segment_acceptance.png
-            ├── coffee_visit_frequency.png
-            ├── coffee_time_of_day.png
-            ├── coffee_driving_context.png
-            └── coffee_accepted_vs_rejected.png
+        │   └── coupon_acceptance_analysis.ipynb   # Executed Jupyter notebook (43 cells)
+        │
+        ├── images/                                # Supporting project images
+        │
+        ├── outputs/                               # Generated visualizations
+        │   ├── coupon_type_counts.png
+        │   ├── temperature_distribution.png
+        │   ├── bar_segment_acceptance.png
+        │   ├── coffee_visit_frequency.png
+        │   ├── coffee_time_of_day.png
+        │   ├── coffee_driving_context.png
+        │   └── coffee_accepted_vs_rejected.png
+        │
+        └── Execution_Screenshots/                 # Notebook execution evidence
+            ├── .gitkeep
+            └── jupyter_notebook_execution.png
 ```
 
-**File organization rationale:** The README sits at the assignment root; the notebook lives in `notebooks/`; raw data live in `data/`; generated charts live in `outputs/`; dependencies are listed in `requirements.txt`. No temporary analysis files are required for submission.
+**Navigation:** [Dataset](data/) · [Notebook](notebooks/coupon_acceptance_analysis.ipynb) · [Visualizations](outputs/) · [Execution screenshots](Execution_Screenshots/)
+
+### Jupyter Notebook Execution Screenshot
+
+The Jupyter Notebook was executed locally with all 43 cells completing without errors. The screenshot below provides additional execution evidence; the saved notebook includes the analysis and outputs.
+
+![Jupyter Notebook execution screenshot](Execution_Screenshots/jupyter_notebook_execution.png)
+
+**[View full-size execution screenshot](Execution_Screenshots/jupyter_notebook_execution.png)** · **[Browse Execution_Screenshots folder](Execution_Screenshots/)** · **[Open executed notebook](notebooks/coupon_acceptance_analysis.ipynb)**
 
 ---
 
@@ -641,7 +631,7 @@ This README is organized to help the grader find evidence for each **5-point cri
 
 | Rubric category | Requirements | Where to verify |
 |---|---|---|
-| **Project Organization — 5 pts** | README with summary and notebook link; readable notebook headings and text; no unnecessary files; appropriate file and folder names | README §§1, 15–16; [Notebook](notebooks/coupon_acceptance_analysis.ipynb); `data/`, `notebooks/`, `outputs/` |
+| **Project Organization — 5 pts** | README with summary and notebook link; readable notebook headings and text; no unnecessary files; appropriate file and folder names | README §§1, 15–16; [Execution screenshot](Execution_Screenshots/jupyter_notebook_execution.png); [Notebook](notebooks/coupon_acceptance_analysis.ipynb); `data/`, `notebooks/`, `outputs/` |
 | **Syntax & Code Quality — 5 pts** | Correct imports and aliases; error-free execution; concise outputs; competent Pandas and Seaborn usage; useful comments and sensible variables | [Executed notebook](notebooks/coupon_acceptance_analysis.ipynb), especially data inspection, group calculations, and plot cells |
 | **Visualizations — 5 pts** | Appropriate categorical/continuous plots; readable labels, descriptive titles, legible axes, appropriate subplots and scales | README §§7–9, 14; seven charts in [`outputs/`](outputs/); notebook visualizations |
 | **Findings — 5 pts** | Clearly stated problem for a coupon group; accepted-versus-rejected comparisons; correct and concise statistical interpretation; clearly stated findings, actionable recommendations, and next steps | README §§2, 8–13; notebook conclusions |
