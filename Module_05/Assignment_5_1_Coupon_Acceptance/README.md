@@ -58,6 +58,60 @@ Businesses use coupons to attract customers, increase store visits, and encourag
 
 ---
 
+## Table of Contents
+
+**Evaluator quick links:** [Nontechnical report](#nontechnical-report-for-business-stakeholders) · [Accepted vs. rejected summary](#accepted-versus-rejected-statistical-summary) · [Inferential statistics](#98-inferential-statistics-coffee-house-visit-frequency) · [Key findings](#10-consolidated-findings-and-business-implications) · [Recommendations](#11-recommendations-priorities-and-success-measures) · [Next steps](#13-next-steps)
+
+| Section | What you will find |
+|---|---|
+| [1. Executive Summary](#1-executive-summary) | Executive summary and headline metrics |
+| [2. Problem Statement](#2-problem-statement) | Goal, problem statement, research questions |
+| [3. Business Context and Decision Framework](#3-business-context-and-decision-framework) | Decision framework |
+| [4. Dataset Overview](#4-dataset-overview) | Dataset and variables |
+| [5. Data Understanding, Quality Checks, and Preparation](#5-data-understanding-quality-checks-and-preparation) | Missing data and preparation |
+| [6. Tools, Code Quality, and Reproducibility](#6-tools-code-quality-and-reproducibility) | Libraries and reproducibility |
+| [7. Exploratory Data Analysis](#7-exploratory-data-analysis) | Overall acceptance and exploration |
+| [8. Required Investigation: Bar Coupons](#8-required-investigation-bar-coupons) | Bar coupon analysis |
+| [9. Independent Investigation: Coffee House Coupons](#9-independent-investigation-coffee-house-coupons) | Coffee House analysis and statistical tests |
+| [10. Consolidated Findings and Business Implications](#10-consolidated-findings-and-business-implications) | Consolidated findings and business actions |
+| [11. Recommendations, Priorities, and Success Measures](#11-recommendations-priorities-and-success-measures) | Prioritized recommendations and success measures |
+| [12. Statistical Interpretation and Limitations](#12-statistical-interpretation-and-limitations) | Statistical limitations |
+| [13. Next Steps](#13-next-steps) | Further analysis and experiments |
+| [14. Visualizations Gallery](#14-visualizations-gallery) | All seven charts |
+| [15. Repository Structure](#15-repository-structure) | File structure |
+| [16. How to Run the Notebook](#16-how-to-run-the-notebook) | How to run the notebook |
+| [17. Assignment Rubric Alignment (20 Points)](#17-assignment-rubric-alignment-20-points) | Rubric checklist |
+| [18. References and Attribution](#18-references-and-attribution) | References |
+| [19. Project Information](#19-project-information) | Project information |
+
+---
+
+## Nontechnical Report for Business Stakeholders
+
+**Goal.** Identify which customers are more receptive to mobile coupons so a business can design better-targeted promotions rather than sending the same offer to everyone.
+
+**What we observed.** Across 12,684 hypothetical survey scenarios, **56.84%** of coupons were accepted and **43.16%** rejected. Results varied by coupon type: **41.0%** of Bar coupons and **49.9%** of Coffee House coupons were accepted. Customers who had visited the relevant type of venue more often were generally more receptive.
+
+**The clearest Coffee House difference:** Among respondents reporting at least one Coffee House visit per month, **66.0% accepted** and **34.0% rejected** the coupon. Among those reporting less-frequent visits **or an unknown visit frequency**, **35.0% accepted** and **65.0% rejected**. That is a **31.0-percentage-point difference** in acceptance. The statistical tests in the notebook support an association between prior visits and stated acceptance, but they do not establish cause and effect.
+
+**What a business could do.** Start with a small, randomized test of offers tailored to customers who already visit coffee houses; separately test delivery time (including 10 AM) and coupon expiration (one day versus two hours). Track **actual redemptions, incremental purchases, profit after discounts, and customer experience**, not just survey responses.
+
+**Important caveat.** This dataset records hypothetical willingness to accept a coupon, not real purchases. Some respondents may appear in more than one scenario, and the comparison group includes unknown visit-frequency answers. Findings should guide experiments, not be treated as proven campaign results.
+
+### Accepted-versus-Rejected Statistical Summary
+
+| Coupon group / customer segment | Accepted | Rejected | Total | Acceptance rate | Rejection rate |
+|---|---:|---:|---:|---:|---:|
+| All coupon scenarios | 7,210 | 5,474 | 12,684 | **56.84%** | 43.16% |
+| Bar coupons | 827 | 1,190 | 2,017 | **41.00%** | 59.00% |
+| Coffee House coupons | 1,995 | 2,001 | 3,996 | **49.92%** | 50.08% |
+| Coffee House: at least monthly | 1,269 | 653 | 1,922 | **66.02%** | 33.98% |
+| Coffee House: less frequent or unknown | 726 | 1,348 | 2,074 | **35.00%** | 65.00% |
+
+**Statistical evidence:** For the two Coffee House visit-frequency groups, Pearson's chi-square test gives **χ²(1) = 383.96, p = 1.71 × 10⁻⁸⁵**. The notebook also reports the two-proportion z-test and 95% Wilson confidence intervals. These tests assume independent observations; possible repeated respondents mean their nominal p-values should be interpreted cautiously. [View the accepted-versus-rejected chart](outputs/coffee_accepted_vs_rejected.png) or [inspect the notebook](notebooks/coupon_acceptance_analysis.ipynb).
+
+---
+
 ## 3. Business Context and Decision Framework
 
 The survey represents potential coupon offers shown to drivers under different conditions. For a real business, a successful coupon program should optimize **incremental business value**, not merely the percentage of people saying they would accept a coupon.
@@ -452,13 +506,13 @@ The analysis does **not** establish:
 7. **Generalizability:** Survey participants and scenarios may not represent every business, region, or current consumer behavior.
 8. **Privacy and safety:** Contextual marketing should not encourage unsafe interaction while driving; real campaigns require appropriate consent and compliance.
 
-**Statistical note:** The percentages in this README are **descriptive estimates**. This project does not claim that formal hypothesis tests, confidence intervals, or causal models were completed unless they are explicitly shown in the notebook.
+**Statistical note:** The percentages in this README are **descriptive estimates**. The Coffee House visit-frequency comparison includes a chi-square test, a two-proportion z-test, and Wilson confidence intervals in the notebook. No causal model was performed.
 
 ---
 
 ## 13. Next Steps
 
-1. **Quantify uncertainty:** Add confidence intervals for key acceptance rates and differences.
+1. **Extend uncertainty estimates:** Calculate confidence intervals for additional coupon groups and for between-group acceptance-rate differences; the Coffee House frequency comparison already includes 95% Wilson intervals.
 2. **Validate subgroup patterns:** Use held-out data or repeat samples where available.
 3. **Control for overlapping factors:** Consider multivariable models to assess whether patterns persist after accounting for other measured attributes.
 4. **Evaluate classification models:** Compare simple baselines with logistic regression or tree-based models using appropriate validation and metrics.
@@ -481,7 +535,6 @@ The following charts are generated by the completed notebook and stored in `outp
 | [Coffee visit frequency](outputs/coffee_visit_frequency.png) | Acceptance by prior Coffee House visitation |
 | [Coffee time of day](outputs/coffee_time_of_day.png) | Coffee House acceptance across survey time categories |
 | [Coffee driving context](outputs/coffee_driving_context.png) | Coffee House acceptance across passenger and destination context |
-
 | [Accepted versus rejected outcomes](outputs/coffee_accepted_vs_rejected.png) | Stacked comparison of both coupon outcomes by Coffee House visit frequency |
 
 For calculation details and explanatory comments, see the **[Jupyter Notebook](notebooks/coupon_acceptance_analysis.ipynb)**.
@@ -497,19 +550,20 @@ Trilok_Berkley_AI_ML_PC/
 └── Module_05/
     └── Assignment_5_1_Coupon_Acceptance/
         ├── README.md
-        ├── notebooks/
-        │   └── coupon_acceptance_analysis.ipynb
         ├── requirements.txt
         ├── .gitignore
         ├── data/
         │   └── coupons.csv
-                └── outputs/
+        ├── notebooks/
+        │   └── coupon_acceptance_analysis.ipynb
+        └── outputs/
             ├── coupon_type_counts.png
             ├── temperature_distribution.png
             ├── bar_segment_acceptance.png
             ├── coffee_visit_frequency.png
             ├── coffee_time_of_day.png
-            └── coffee_driving_context.png
+            ├── coffee_driving_context.png
+            └── coffee_accepted_vs_rejected.png
 ```
 
 **File organization rationale:** The README sits at the assignment root; the notebook lives in `notebooks/`; raw data live in `data/`; generated charts live in `outputs/`; dependencies are listed in `requirements.txt`. No temporary analysis files are required for submission.
