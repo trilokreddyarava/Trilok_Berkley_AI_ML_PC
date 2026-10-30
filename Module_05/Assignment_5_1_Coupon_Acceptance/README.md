@@ -19,6 +19,38 @@ The overall stated acceptance rate was **56.84% (7,210 of 12,684)**. The investi
 
 This is a **descriptive, observational analysis**. It identifies potential marketing segments and testable hypotheses; it does **not** demonstrate causal effects or measure actual coupon redemption, purchases, or campaign profitability.
 
+Project Structure:
+Trilok_Berkley_AI_ML_PC/
+│
+└── Module_05/
+    │
+    ├── README.md                              # Module 5 overview
+    │
+    └── Assignment_5_1_Coupon_Acceptance/
+        │
+        ├── README.md                          # Project overview, findings, and recommendations
+        ├── requirements.txt                   # Python dependencies
+        ├── .gitignore                         # Git exclusions
+        │
+        ├── data/
+        │   └── coupons.csv                    # Original dataset
+        │
+        ├── notebooks/
+        │   └── coupon_acceptance_analysis.ipynb  # Executed Jupyter notebook (43 cells)
+        │
+        ├── outputs/                           # Generated visualizations
+        │   ├── coupon_type_counts.png
+        │   ├── temperature_distribution.png
+        │   ├── bar_segment_acceptance.png
+        │   ├── coffee_visit_frequency.png
+        │   ├── coffee_time_of_day.png
+        │   ├── coffee_driving_context.png
+        │   └── coffee_accepted_vs_rejected.png
+        │
+        └── screenshots/                       # Jupyter execution screenshots
+            └── jupyter_notebook_execution.png
+
+
 ### Results at a glance
 
 | Measure | Result | Interpretation |
