@@ -60,7 +60,7 @@ Businesses use coupons to attract customers, increase store visits, and encourag
 
 ## Table of Contents
 
-**Evaluator quick links:** [Nontechnical report](#nontechnical-report-for-business-stakeholders) · [Accepted vs. rejected summary](#accepted-versus-rejected-statistical-summary) · [Inferential statistics](#98-inferential-statistics-coffee-house-visit-frequency) · [Key findings](#10-consolidated-findings-and-business-implications) · [Recommendations](#11-recommendations-priorities-and-success-measures) · [Next steps](#13-next-steps)
+**Key sections:** [Nontechnical report](#nontechnical-report-for-business-stakeholders) · [Accepted vs. rejected summary](#accepted-versus-rejected-statistical-summary) · [Inferential statistics](#98-inferential-statistics-coffee-house-visit-frequency) · [Key findings](#10-consolidated-findings-and-business-implications) · [Recommendations](#11-recommendations-priorities-and-success-measures) · [Next steps](#13-next-steps)
 
 | Section | What you will find |
 |---|---|
@@ -80,7 +80,7 @@ Businesses use coupons to attract customers, increase store visits, and encourag
 | [14. Visualizations Gallery](#14-visualizations-gallery) | All seven charts |
 | [15. Repository Structure](#15-repository-structure) | Full repository tree and execution screenshot |
 | [16. How to Run the Notebook](#16-how-to-run-the-notebook) | How to run the notebook |
-| [17. Assignment Rubric Alignment (20 Points)](#17-assignment-rubric-alignment-20-points) | Rubric checklist |
+| [17. Project Deliverables](#17-project-deliverables) | Project components and evidence |
 | [18. References and Attribution](#18-references-and-attribution) | References |
 | [19. Project Information](#19-project-information) | Project information |
 
@@ -625,18 +625,16 @@ The notebook resolves the dataset from either `../data/coupons.csv` (when launch
 
 ---
 
-## 17. Assignment Rubric Alignment (20 Points)
+## 17. Project Deliverables
 
-This README is organized to help the grader find evidence for each **5-point criterion**. The rubric evaluates the **entire submission**, not the README alone; the notebook and its actual execution must also satisfy the requirements.
+The project brings together a reproducible exploratory analysis, clear visual evidence, and actionable business insights. The following components provide direct access to the work.
 
-| Rubric category | Requirements | Where to verify |
+| Project component | Description | Where to explore |
 |---|---|---|
-| **Project Organization — 5 pts** | README with summary and notebook link; readable notebook headings and text; no unnecessary files; appropriate file and folder names | README §§1, 15–16; [Execution screenshot](Execution_Screenshots/jupyter_notebook_execution.png); [Notebook](notebooks/coupon_acceptance_analysis.ipynb); `data/`, `notebooks/`, `outputs/` |
-| **Syntax & Code Quality — 5 pts** | Correct imports and aliases; error-free execution; concise outputs; competent Pandas and Seaborn usage; useful comments and sensible variables | [Executed notebook](notebooks/coupon_acceptance_analysis.ipynb), especially data inspection, group calculations, and plot cells |
-| **Visualizations — 5 pts** | Appropriate categorical/continuous plots; readable labels, descriptive titles, legible axes, appropriate subplots and scales | README §§7–9, 14; seven charts in [`outputs/`](outputs/); notebook visualizations |
-| **Findings — 5 pts** | Clearly stated problem for a coupon group; accepted-versus-rejected comparisons; correct and concise statistical interpretation; clearly stated findings, actionable recommendations, and next steps | README §§2, 8–13; notebook conclusions |
-
-**Submission quality checklist:** Confirm that every link resolves in GitHub, the notebook opens with visible outputs, all seven charts render, the dataset is present, and the notebook runs from start to finish without errors.
+| **Project organization** | Structured source data, analysis notebook, generated charts, dependencies, and execution evidence | [Notebook](notebooks/coupon_acceptance_analysis.ipynb) · [Dataset](data/coupons.csv) · [Outputs](outputs/) · [Execution evidence](Execution_Screenshots/jupyter_notebook_execution.png) |
+| **Analysis and reproducibility** | Documented data preparation, Pandas analysis, Seaborn/Matplotlib visualizations, and repeatable notebook execution | [Executed notebook](notebooks/coupon_acceptance_analysis.ipynb) · [Requirements](requirements.txt) · [Run instructions](#16-how-to-run-the-notebook) |
+| **Visualizations** | Seven labeled figures examining coupon distribution, driving context, and acceptance across customer segments | [Visualization gallery](#14-visualizations-gallery) · [Figures](outputs/) |
+| **Findings and recommendations** | Descriptive statistics, accepted-versus-rejected comparisons, Coffee House investigation, business implications, limitations, and next steps | [Findings](#10-consolidated-findings-and-business-implications) · [Recommendations](#11-recommendations-priorities-and-success-measures) · [Limitations](#12-statistical-interpretation-and-limitations) · [Next steps](#13-next-steps) |
 
 ---
 
