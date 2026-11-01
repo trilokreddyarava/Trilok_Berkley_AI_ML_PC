@@ -1,0 +1,13 @@
+type,median_price,listings
+mini-van,7500.0,4421
+sedan,11500.0,75934
+wagon,12999.0,9619
+offroad,13500.0,501
+hatchback,14990.0,15474
+SUV,14999.0,67001
+convertible,15995.0,6415
+van,16950.0,7638
+coupe,20590.0,16039
+truck,26500.0,28584
+other,27990.0,19189
+pickup,28590.0,39738
