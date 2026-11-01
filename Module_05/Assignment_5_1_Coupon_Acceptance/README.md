@@ -416,7 +416,7 @@ To evaluate whether the observed acceptance-rate difference could plausibly aris
 
 ### Additional visualization: accepted versus rejected
 
-The [100% stacked outcome chart](outputs/coffee_accepted_vs_rejected.png) explicitly compares **accepted and rejected** Coffee House coupons in each visit-frequency group. Regular visitors accepted 66.0% and rejected 34.0%; the less-frequent/unknown group accepted 35.0% and rejected 65.0%. This directly supports the rubric requirement to compare customers who accepted versus rejected coupons. The grouping includes respondents with unknown visit frequency, so it should not be interpreted as a pure comparison of known regular and infrequent visitors.
+The [100% stacked outcome chart](outputs/coffee_accepted_vs_rejected.png) explicitly compares **accepted and rejected** Coffee House coupons in each visit-frequency group. Regular visitors accepted 66.0% and rejected 34.0%; the less-frequent/unknown group accepted 35.0% and rejected 65.0%. This visualization highlights the differences in coupon acceptance behavior between regular and less-frequent Coffee House visitors to compare customers who accepted versus rejected coupons. The grouping includes respondents with unknown visit frequency, so it should not be interpreted as a pure comparison of known regular and infrequent visitors.
 
 ## 10. Consolidated Findings and Business Implications
 
