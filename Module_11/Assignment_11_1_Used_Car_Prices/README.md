@@ -5,7 +5,7 @@
 **Methodology:** CRISP-DM | **Outcome:** Used-car **advertised** price (USD)  
 **Author:** Trilok Reddy Arava
 
-> **Executive takeaway:** On a reproducible sample of 40,000 filtered listings, Ridge Regression achieved a holdout mean absolute error of **$5,656**, compared with **$10,998** for a median-price baseline (about **49%** lower error). These are asking-price estimates, not verified transaction values.
+> **Executive takeaway:** Using **all 367,371 cleaned listings** (no modeling sample), **Ridge** achieved a held-out MAE of **$5,667**, versus **$11,056** for the median baseline (**48.7% lower**). These are advertised asking prices, not verified sale prices.
 
 ## Table of Contents
 
@@ -24,9 +24,9 @@
 
 ## Executive Summary
 
-This project studies which characteristics are **associated** with used-car listing prices and whether interpretable regression models can predict asking prices more accurately than a simple median-price baseline. The supplied dataset includes **426,880 advertisements**. After documented validity filters, **367,371** listings remain. For practical laptop execution, modeling uses a fixed random sample of 40,000 cleaned listings.
+This project studies which characteristics are **associated** with used-car listing prices and whether interpretable regression models can predict asking prices more accurately than a simple median-price baseline. The supplied dataset includes **426,880 advertisements**. After documented validity filters, **367,371** listings remain. All 367,371 cleaned listings are used for modeling, with an 80/20 holdout split. No modeling subsampling is performed.
 
-The recommended model is **Ridge Regression**, which had the lowest observed test MAE among the tested models. This result is specific to the defined filters, random sample, and test split; the tiny difference from ordinary least squares does not prove Ridge is universally superior.
+The lowest observed test MAE is from **Ridge**. Results depend on the defined filters and random split; the difference between Ridge and ordinary least squares is very small and does not establish universal superiority.
 
 **[Open the fully executed Jupyter notebook](notebooks/used_car_price_analysis.ipynb)** · **[View execution evidence](Execution_Screenshots/notebook_execution.png)** · **[View model metrics](outputs/reports/model_performance.csv)**
 
@@ -72,22 +72,22 @@ All figures are produced by notebook execution and saved to [outputs/figures/](o
 
 ## Modeling and Validation
 
-**Models:** Median baseline, Linear Regression, Ridge Regression and Lasso Regression. **Design:** 80/20 random train/test split of a reproducible 40,000-listing sample; three-fold cross-validation and `GridSearchCV` for model comparison/tuning. Imputation, scaling and one-hot encoding occur *inside* each fitted pipeline to avoid leakage.
+**Models:** Median baseline, Linear Regression, Ridge Regression and Lasso Regression. **Design:** 80/20 random train/test split of the complete 367,371-listing cleaned dataset; three-fold cross-validation and `GridSearchCV` for model comparison/tuning. Imputation, scaling and one-hot encoding occur *inside* each fitted pipeline to avoid leakage.
 
 **Primary metric: Mean Absolute Error (MAE)** — average absolute pricing error in USD, understandable to dealership staff. RMSE and R² are supplementary metrics.
 
-| Model | CV MAE | Holdout MAE | Holdout RMSE | Holdout R² |
-|---|---:|---:|---:|---:|
-| Ridge | $5,668 | $5,656 | $7,921 | 0.682 |
-| Linear Regression | $5,673 | $5,657 | $7,920 | 0.682 |
-| Lasso | $5,679 | $5,670 | $7,960 | 0.679 |
-| Median baseline | $11,057 | $10,998 | $14,458 | -0.059 |
+| Model | CV MAE | Holdout MAE | Holdout RMSE | Holdout R² | Best parameters |
+|---|---:|---:|---:|---:|---|
+| Ridge | $5,644 | $5,667 | $8,070 | 0.679 | {'model__alpha': 10} |
+| Linear Regression | $5,644 | $5,667 | $8,069 | 0.679 | {} |
+| Lasso | $5,670 | $5,696 | $8,143 | 0.674 | {'model__alpha': 10} |
+| Median baseline | $11,045 | $11,056 | $14,639 | -0.055 | {} |
 
-**Hyperparameter selection:** Ridge alpha = 10; Lasso alpha = 10 in this run. See [full performance report](outputs/reports/model_performance.csv) and [Ridge coefficient report](outputs/reports/ridge_coefficients.csv). Numeric coefficients represent a one-standard-deviation change; one-hot category coefficients are conditional on the model's encoding and are not causal effects.
+**Hyperparameter selection:** See the final parameter selections in the table and [full performance report](outputs/reports/model_performance.csv). [Ridge coefficients](outputs/reports/ridge_coefficients.csv) are descriptive associations, not causal effects. Numeric coefficients correspond to one standardized unit; categorical coefficients depend on encoding.
 
 ## Key Findings
 
-1. **Prediction is substantially better than a naive baseline.** Ridge reduced holdout MAE by about 49% versus the median-price predictor in the specified sample.
+1. **Prediction is substantially better than a naive baseline.** Ridge reduced holdout MAE by 48.7% versus the median-price predictor on the full cleaned dataset.
 2. **Vehicle age and mileage are useful pricing signals.** The notebook visualizes their unadjusted relationships and estimates adjusted linear-model coefficients.
 3. **Manufacturer and vehicle type matter for benchmarking.** Group medians differ, but raw comparisons also reflect differences in age, mileage, and vehicle mix; see [manufacturer summary](outputs/reports/manufacturer_summary.csv) and [vehicle type summary](outputs/reports/vehicle_type_summary.csv).
 4. **Listing quality limits certainty.** Many attributes are missing; some records have implausible prices. Exclusion rules and missing-data handling affect generalizability.
@@ -105,7 +105,7 @@ All figures are produced by notebook execution and saved to [outputs/figures/](o
 
 - The target is **advertised asking price**, not a completed transaction or consumer willingness to pay.
 - Filters remove unusual listings and may limit applicability to rare/low-cost/high-end vehicles.
-- Modeling uses a 40,000-row sample from 367,371 filtered rows; results are sample-specific.
+- Modeling uses all 367,371 filtered rows; results are specific to the filtered population and random split.
 - Random splitting does not assess future-market drift. Validate on time-separated, region-specific and actual sales datasets.
 - Model coefficients are **associations**, not causal explanations. Category encoding and correlated features affect coefficient interpretation.
 - Next: add sales outcomes, vehicle trim/market history, segment-level error analysis, and monitoring for drift.
@@ -124,7 +124,7 @@ All figures are produced by notebook execution and saved to [outputs/figures/](o
 ## Reproduce the Analysis
 
 1. Use Python 3.10+ with `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `jupyter` and `ipykernel`.
-2. Confirm `data/vehicles.csv` is present (included in the downloadable project ZIP).
+2. Confirm `data/vehicles.csv` is present (uploaded in this GitHub project).
 3. Open `notebooks/used_car_price_analysis.ipynb` in Jupyter and select a Python kernel.
 4. Run **Kernel → Restart & Run All**. The notebook saves figures and reports automatically under `outputs/`.
 5. Inspect the executed cell outputs and [execution evidence](Execution_Screenshots/notebook_execution.png). Results should be reproducible with the fixed random seed; library-version differences may produce minor changes.
@@ -136,7 +136,7 @@ All figures are produced by notebook execution and saved to [outputs/figures/](o
 | Grading category | Evidence |
 |---|---|
 | Organization (5) | README with TOC, notebook link, structured folders, no extraneous analysis files |
-| Syntax/code quality (5) | Executed notebook, pandas, seaborn styling, clear variable names and comments |
+| Syntax/code quality (5) | Executed notebook with all 367,371 records, pandas, seaborn styling, clear variable names and comments |
 | Visualizations (5) | Seven labeled figures covering continuous and categorical features |
 | Modeling (5) | Four models, three-fold CV, GridSearchCV, coefficients, MAE/RMSE/R² rationale |
 | Findings (5) | Executive summary, data-cleaning audit, business recommendations, limitations and next steps |
