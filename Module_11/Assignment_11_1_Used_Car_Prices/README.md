@@ -20,7 +20,7 @@
 9. [Limitations and Next Steps](#limitations-and-next-steps)
 10. [Repository Navigation](#repository-navigation)
 11. [Reproduce the Analysis](#reproduce-the-analysis)
-12. [Rubric Checklist](#rubric-checklist)
+12. [Project Deliverables](#project-deliverables)
 
 ## Executive Summary
 
@@ -131,14 +131,13 @@ All figures are produced by notebook execution and saved to [outputs/figures/](o
 
 **Install:** `pip install -r requirements.txt`
 
-## Rubric Checklist
+## Project Deliverables
 
-| Grading category | Evidence |
+| Project area | Deliverables |
 |---|---|
-| Organization (5) | README with TOC, notebook link, structured folders, no extraneous analysis files |
-| Syntax/code quality (5) | Executed notebook with all 367,371 records, pandas, seaborn styling, clear variable names and comments |
-| Visualizations (5) | Seven labeled figures covering continuous and categorical features |
-| Modeling (5) | Four models, three-fold CV, GridSearchCV, coefficients, MAE/RMSE/R² rationale |
-| Findings (5) | Executive summary, data-cleaning audit, business recommendations, limitations and next steps |
+| Organization | README with TOC, notebook link, structured folders, no extraneous analysis files |
+| Code quality | Executed notebook with all 367,371 records, pandas, seaborn styling, clear variable names and comments |
+| Visualizations | Seven labeled figures covering continuous and categorical features |
+| Modeling | Four models, three-fold CV, GridSearchCV, coefficients, MAE/RMSE/R² rationale |
+| Findings | Executive summary, data-cleaning audit, business recommendations, limitations and next steps |
 
-**Submission:** Push this project folder to your public GitHub repository and submit its GitHub URL in the course portal.
