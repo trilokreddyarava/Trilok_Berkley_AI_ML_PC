@@ -1,0 +1,98 @@
+MODULE 19 - REQUIRED DISCUSSION 19.1
+BUILDING A RECOMMENDATION SYSTEM USING SURPRISE
+
+1. PROJECT OBJECTIVE
+
+The objective of this assignment was to develop and
+evaluate collaborative filtering recommendation algorithms
+using Python's SURPRISE library.
+
+I explored different machine learning approaches for
+predicting movie ratings and identifying the most
+accurate recommendation model.
+
+2. DATASET DESCRIPTION
+
+I used the MovieLens 100K dataset from GroupLens.
+
+Dataset characteristics:
+- 100,000 movie ratings
+- 943 unique users
+- 1,682 movies
+- Rating scale: 1 to 5 stars
+
+The dataset captures interactions between users and
+movies and is suitable for collaborative filtering.
+
+3. ALGORITHMS EVALUATED
+
+I implemented five recommendation algorithms:
+
+- KNNBasic
+- SVD (Singular Value Decomposition)
+- NMF (Non-negative Matrix Factorization)
+- SlopeOne
+- CoClustering
+
+4. CROSS-VALIDATION METHODOLOGY
+
+I used five-fold cross-validation to compare the
+algorithms consistently.
+
+The evaluation metrics included:
+
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+
+MSE was the primary metric used to select the
+best-performing algorithm.
+
+5. CROSS-VALIDATION RESULTS
+
+Mean MSE for each algorithm:
+
+SVD: 0.8742
+SlopeOne: 0.8917
+NMF: 0.9260
+CoClustering: 0.9325
+KNNBasic: 0.9583
+
+BEST-PERFORMING ALGORITHM: SVD
+LOWEST AVERAGE MSE: 0.8742
+
+6. KEY FINDINGS
+
+The best-performing algorithm was SVD,
+achieving the lowest average MSE of 0.8742.
+
+This indicates that SVD produced the
+smallest average squared rating prediction error
+among the five algorithms evaluated.
+
+The results demonstrate the importance of evaluating
+multiple collaborative filtering approaches using
+cross-validation.
+
+7. BUSINESS APPLICATIONS
+
+Recommendation systems help organizations:
+
+- Personalize products and content.
+- Improve content discovery.
+- Support customer engagement.
+- Identify relevant recommendations.
+- Improve the overall customer experience.
+
+8. CONCLUSION
+
+This assignment provided practical experience in
+developing and comparing recommendation algorithms
+using the SURPRISE library.
+
+Based on five-fold cross-validation, SVD
+achieved the lowest average MSE of 0.8742.
+
+Future improvements could include hyperparameter
+tuning, larger datasets, and top-N recommendation
+evaluation using precision and recall.
