@@ -1,3 +1,3 @@
 # Execution screenshots
 
-After running the notebook, optionally save screenshots here as `dataset_overview.png`, `model_comparison.png`, and `final_results.png`. Screenshots are not included yet.
+After running all notebook cells locally, the Jupyter screenshots are attached in execution_screenshots. 
