@@ -28,7 +28,7 @@ This project studies which characteristics are **associated** with used-car list
 
 The lowest observed test MAE is from **Ridge**. Results depend on the defined filters and random split; the difference between Ridge and ordinary least squares is very small and does not establish universal superiority.
 
-**[Open the fully executed Jupyter notebook](notebooks/used_car_price_analysis.ipynb)** · **[View execution evidence](Execution_Screenshots/notebook_execution.png)** · **[View model metrics](outputs/reports/model_performance.csv)**
+**[Open the fully executed Jupyter notebook](notebooks/used_car_price_analysis.ipynb)** · **[View execution evidence](Execution_Screenshots/jupyter_notebook_execution_1.png)** · **[View model metrics](outputs/reports/model_performance.csv)**
 
 ## Business Problem and CRISP-DM
 
