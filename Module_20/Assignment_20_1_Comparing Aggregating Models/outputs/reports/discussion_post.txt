@@ -1,0 +1,5 @@
+I used the OpenML census wage dataset (ID 534) to predict hourly wages. I compared Linear Regression, KNN, Decision Tree, Ridge, and SVR against both equal-weight and tuned VotingRegressor ensembles. I used a held-out test set and tuned the voting model with cross-validation on training data.
+
+The lowest test RMSE was achieved by svr (RMSE=4.3604). The best individual model was svr (RMSE=4.3604), while the best ensemble was voting_equal (RMSE=4.3880). Thus, the ensemble did not outperform the best individual model on the held-out data.
+
+Voting improves flexibility by combining different prediction methods, but its aggregate predictions are less directly interpretable than a linear model. I used permutation importance to examine which original input features influenced predictions most; the top three were education, occupation, experience. These are predictive associations, not causal effects.
