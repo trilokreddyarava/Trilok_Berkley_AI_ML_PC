@@ -1,0 +1,22 @@
+column,description,raw_dtype,cleaned_dtype,raw_null_count,raw_blank_strings,cleaned_missing_count,unique_nonmissing_values,modeling_treatment
+customerID,Anonymized customer identifier; excluded from modeling,str,str,0,0,0,7043,Exclude identifier
+gender,Reported customer gender,str,str,0,0,0,2,Pipeline imputation / encoding or scaling
+SeniorCitizen,Senior-citizen indicator (1 = yes),int64,int64,0,0,0,2,Pipeline imputation / encoding or scaling
+Partner,Whether the customer has a partner,str,str,0,0,0,2,Pipeline imputation / encoding or scaling
+Dependents,Whether the customer has dependents,str,str,0,0,0,2,Pipeline imputation / encoding or scaling
+tenure,Months the customer has been with the provider,int64,int64,0,0,0,73,Pipeline imputation / encoding or scaling
+PhoneService,Whether phone service is active,str,str,0,0,0,2,Pipeline imputation / encoding or scaling
+MultipleLines,Whether multiple phone lines are active,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+InternetService,Internet service category,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+OnlineSecurity,Online security subscription status,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+OnlineBackup,Online backup subscription status,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+DeviceProtection,Device protection subscription status,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+TechSupport,Technical support subscription status,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+StreamingTV,Streaming television subscription status,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+StreamingMovies,Streaming movies subscription status,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+Contract,Subscription contract term,str,str,0,0,0,3,Pipeline imputation / encoding or scaling
+PaperlessBilling,Whether paperless billing is enabled,str,str,0,0,0,2,Pipeline imputation / encoding or scaling
+PaymentMethod,Customer payment method,str,str,0,0,0,4,Pipeline imputation / encoding or scaling
+MonthlyCharges,Current monthly bill amount,float64,float64,0,0,0,1585,Pipeline imputation / encoding or scaling
+TotalCharges,Cumulative charges; source includes blank strings,str,float64,0,11,11,6530,Numeric conversion + pipeline median imputation
+Churn,Observed customer churn outcome (Yes or No),str,str,0,0,0,2,Binary target

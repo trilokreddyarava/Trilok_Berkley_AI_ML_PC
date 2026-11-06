@@ -1,0 +1,7 @@
+check,value
+Raw customer records,7043
+Duplicate customer IDs,0
+Duplicate complete rows,0
+Blank TotalCharges strings,11
+Missing TotalCharges after conversion,11
+Rows after duplicate-ID check,7043

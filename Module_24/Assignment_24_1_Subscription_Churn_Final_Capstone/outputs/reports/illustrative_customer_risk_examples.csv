@@ -1,0 +1,4 @@
+example_case,tenure,Contract,InternetService,MonthlyCharges,PaymentMethod,predicted_churn_probability,predicted_churn_at_0_50
+Example A (lower score),72,Two year,No,19.95,Bank transfer (automatic),0.0017,No churn
+Example B (middle score),72,One year,Fiber optic,97.25,Credit card (automatic),0.1904,No churn
+Example C (higher score),1,Month-to-month,Fiber optic,95.1,Electronic check,0.8552,Churn

@@ -1,0 +1,6 @@
+model,cv_average_precision,cv_roc_auc,cv_recall,cv_f1,best_params
+Logistic Regression,0.6601632487504593,0.8457892468993066,0.544471808409322,0.5944531939016401,"{'classifier__C': 1, 'classifier__class_weight': None}"
+Random Forest,0.6526017195155254,0.8432600274220604,0.4702403468248411,0.5554097624910869,"{'classifier__class_weight': None, 'classifier__max_depth': 6, 'classifier__min_samples_leaf': 5}"
+Support Vector Classifier,0.6493607239770235,0.8342417842012289,0.5170501645862006,0.5817187513330432,"{'classifier__estimator__C': 0.1, 'classifier__estimator__class_weight': None}"
+Naive Bayes,0.613414279271046,0.8201807548797171,0.8461541557009603,0.5979125106782078,{'classifier__var_smoothing': 1e-09}
+Decision Tree,0.5902850834547481,0.8011843323495048,0.5244250213948646,0.5584247478795165,"{'classifier__class_weight': None, 'classifier__max_depth': 8, 'classifier__min_samples_leaf': 10}"
